@@ -23,11 +23,15 @@ public class CoinsCommand extends Command {
         if( commandSender instanceof PlayerCommandSender ) {
             EntityPlayer player = (EntityPlayer) commandSender;
 
-            int playerCoins = Coinsystem.getInstance().getCoinAPI().getCoins( player );
+            int coins = Coinsystem.getInstance().getCoinAPI().getCoins( player );
 
-            output.success( Coinsystem.getPrefix() + "Du hast aktuell §e" + playerCoins + " §7Coins." );
+            if( coins != 1 ) {
+                output.success( Coinsystem.getPrefix() + "You've actually §e" + coins + " §7coins." );
+            } else {
+                output.success( Coinsystem.getPrefix() + "You've actually §e" + coins + " §7coin." );
+            }
         } else {
-            output.fail( Coinsystem.getPrefix() + "§cDu bist kein Spieler!" );
+            output.fail( Coinsystem.getPrefix() + "§cYou must be a player!" );
         }
         return output;
     }

@@ -31,9 +31,14 @@ public class RmCoinsCommand extends Command {
 
         if( ! Integer.toString( coins ).startsWith( "-" ) ) {
             Coinsystem.getInstance().getCoinAPI().removeCoins( target, coins );
-            output.success( Coinsystem.getPrefix() + "Du hast dem Spieler §e" + target.getName() + " " + coins + " Coins §7gelöscht." );
+
+            if( coins != 1 ) {
+                output.success( Coinsystem.getPrefix() + "You've removed §e" + coins + " coins §7from the player §e" + target.getName() + "§7." );
+            } else {
+                output.success( Coinsystem.getPrefix() + "You've removed §e" + coins + " coin §7from the player §e" + target.getName() + "§7." );
+            }
         } else {
-            output.fail( Coinsystem.getPrefix() + "Du kannst keinen negativen amount setzen!" );
+            output.fail( Coinsystem.getPrefix() + "§cYou cannot set a negative amount!" );
         }
 
         return output;

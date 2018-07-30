@@ -24,7 +24,7 @@ public class Coinsystem extends Plugin {
     public void onStartup() {
         instance = this;
 
-        getLogger().info( getPrefix() + "§aDas Plugin wurde aktiviert." );
+        getLogger().info( getPrefix() + "§aThe plugin was enabled." );
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Coinsystem extends Plugin {
     @Override
     public void onUninstall() {
         getMySQL().disconnect();
-        getLogger().info( getPrefix() + "§cDas Plugin wurde deaktiviert." );
+        getLogger().info( getPrefix() + "§cThe plugin was disabled." );
     }
 
     public static String getPrefix() {

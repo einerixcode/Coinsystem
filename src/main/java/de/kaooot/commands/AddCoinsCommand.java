@@ -30,9 +30,14 @@ public class AddCoinsCommand extends Command {
 
         if( ! Integer.toString( coins ).startsWith( "-" ) ) {
             Coinsystem.getInstance().getCoinAPI().addCoins( target, coins );
-            output.success( Coinsystem.getPrefix() + "Du hast dem Spieler §e" + target.getName() + " " + coins + " Coins §7hinzugefügt." );
+
+            if( coins != 1 ) {
+                output.success( Coinsystem.getPrefix() + "You've added §e" + coins + " coins §7to the player §e" + target.getName() + "§7." );
+            } else {
+                output.success( Coinsystem.getPrefix() + "You've added §e" + coins + " coin §7to the player §e" + target.getName() + "§7." );
+            }
         } else {
-            output.fail( Coinsystem.getPrefix() + "Du kannst keinen negativen amount setzen!" );
+            output.fail( Coinsystem.getPrefix() + "§cYou cannot set a negative amount!" );
         }
 
         return output;
