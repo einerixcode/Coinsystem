@@ -34,7 +34,7 @@ public class SetCoinsCommand extends Command {
             if( coins != 1 ) {
                 output.success( Coinsystem.getPrefix() + "You've set the amount of coins from §e" + target.getName() + " §7to §e" + coins + " coins §7." );
             } else {
-                output.success( Coinsystem.getPrefix() + "You've set the amount of coins from §e" + target.getName() + " §7to §e" + coins + " coin §7." );
+                output.success( Coinsystem.getPrefix() + "You've set the amount of coin from §e" + target.getName() + " §7to §e" + coins + " coin §7." );
             }
         } else {
             output.fail( Coinsystem.getPrefix() + "§cYou cannot set a negative amount!" );

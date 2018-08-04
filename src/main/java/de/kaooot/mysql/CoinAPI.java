@@ -89,4 +89,12 @@ public class CoinAPI {
             removeCoins( player, coins );
         }
     }
+
+    public boolean hasEnoughCoins( EntityPlayer player, Integer coins ) {
+        if( getCoins( player ) >= coins ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
